@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Property Services London</title>
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --whatsapp-color: #25d366;
+            --bg-light: #f8fafc;
+            --text-color: #334155;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Header styling with background image, dark overlay, and fallback color */
+        header {
+            position: relative;
+            /* Fallback color (--primary-color) is first. If image fails, original background color shows up! */
+            background: var(--primary-color) linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8)), url('window-before-after.JPG');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 1.5rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            max-width: 1000px;
+            word-wrap: break-word;
+            z-index: 1; /* Keeps text above the background image */
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: #cbd5e1;
+            text-align: center;
+            z-index: 1; /* Keeps text above the background image */
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            width: 100%;
+            z-index: 1; /* Keeps buttons above the background image */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background 0.3s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-color);
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.15rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card h3 {
+            margin-bottom: 1.2rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .services-list, .audience-list {
+            list-style-type: none;
+            width: 100%;
+        }
+
+        .services-list li, .audience-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            padding-left: 1.5rem;
+            text-align: left;
+        }
+
+        .services-list li::before, .audience-list li::before {
+            content: "✓";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .services-list li:last-child, .audience-list li:last-child {
+            border-bottom: none;
+        }
+
+        .process-section {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .process-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-section {
+            text-align: center;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 1.5rem;
+            border-radius: 8px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin: 1.5rem 0;
+            width: 100%;
+            word-break: break-all;
+            overflow-wrap: break-word;
+        }
+
+        .contact-info a {
+            color: #60a5fa;
+            text-decoration: none;
+            display: inline-block;
+            max-width: 100%;
+            word-break: break-all;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+            width: 100%;
+            background-color: var(--bg-light);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Header Section -->
+    <header>
+        <h1>Professional Property Services London</h1>
+        <p>Reliable Property Services for Homes, Landlords & Businesses</p>
+        <div class="cta-buttons">
+            <a href="tel:07443967103" class="btn btn-primary">Call Now: 07443 967103</a>
+            <a href="https://wa.me/447443967103?text=Hi,%20I'm%20interested%20in%20your%20property%20services." target="_blank" class="btn btn-whatsapp">Chat on WhatsApp</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Intro Text -->
+        <div class="intro-text">
+            <p>We provide reliable professional property services across <strong>North London, North West London, East London and Central London</strong>. Whether you need a property refreshed, repaired, cleaned or prepared for new tenants, we can help arrange the right professional for the job.</p>
+        </div>
+
+        <div class="grid-2">
+            <!-- Services Card -->
+            <div class="card">
+                <h3>Our Services</h3>
+                <ul class="services-list">
+                    <li>Painting & Decorating</li>
+                    <li>Property Maintenance</li>
+                    <li>Plastering & Wall Repairs</li>
+                    <li>Bathroom Installation & Plumbing</li>
+                    <li>Tiling & Wall/Floor Tiles</li>
+                    <li>Handyman Services</li>
+                    <li>Flooring</li>
+                    <li>Carpet Cleaning</li>
+                    <li>End of Tenancy Cleaning</li>
+                    <li>After Builders Cleaning</li>
+                    <li>General Cleaning</li>
+                    <li>Office & Commercial Cleaning</li>
+                </ul>
+            </div>
+
+            <!-- Who We Help Card -->
+            <div class="card" style="align-items: center; text-align: center;">
+                <h3 style="width: 100%;">Who We Help</h3>
+                <ul class="audience-list" style="margin-bottom: 2rem;">
+                    <li>Homes</li>
+                    <li>Landlords</li>
+                    <li>Businesses</li>
+                    <li>Estate Agents / Real Estate Companies</li>
+                </ul>
+
+                <h3 style="font-size: 1.2rem; border: none; padding: 0; margin-bottom: 0.5rem; width: 100%;">Request a Quote</h3>
+                <p style="font-size: 0.95rem; color: #64748b; text-align: center;">Contact us with a brief description of the work. You can also send photos of the property or the work required via WhatsApp to help us understand what you need.</p>
+            </div>
+        </div>
+
+        <!-- Process Section -->
+        <div class="process-section">
+            <h3>Need Work Done?</h3>
+            <p>Tell us what you need and we’ll help arrange the right professional for the job. For serious enquiries, a professional can visit the property to assess the work and provide a final quotation.</p>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <p>Call / WhatsApp: <a href="tel:07443967103">07443 967103</a></p>
+                <p>Email: <a href="mailto:londonprofessionalproperty@gmail.com">londonprofessionalproperty@gmail.com</a></p>
+            </div>
+            <div class="cta-buttons" style="margin-top: 1.5rem;">
+                <a href="https://wa.me/447443967103?text=Hi,%20I'd%20like%20to%20request%20a%20quote." target="_blank" class="btn btn-whatsapp">Send Photos & Request Quote on WhatsApp</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Serving North London | North West London | East London | Central London</p>
+        <p style="margin-top: 0.5rem;">&copy; 2026 Professional Property Services London. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
